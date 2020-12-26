@@ -83,58 +83,75 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
+  automaticRester() {
+    Timer(Duration(seconds: 2), () {
+      setState(() {
+        reset();
+      });
+    });
+  }
+
   checkWin() {
     if ((gameState[0] != "empty") &&
         (gameState[0] == gameState[1]) &&
         (gameState[1] == gameState[2])) {
       setState(() {
         this.message = "${this.gameState[0]} wins";
+        automaticRester();
       });
     } else if ((gameState[3] != "empty") &&
         (gameState[3] == gameState[4]) &&
         (gameState[4] == gameState[5])) {
       setState(() {
         this.message = "${this.gameState[3]} wins";
+        automaticRester();
       });
     } else if ((gameState[6] != "empty") &&
         (gameState[6] == gameState[7]) &&
         (gameState[7] == gameState[8])) {
       setState(() {
         this.message = "${this.gameState[6]} wins";
+        automaticRester();
       });
     } else if ((gameState[0] != "empty") &&
         (gameState[0] == gameState[3]) &&
         (gameState[3] == gameState[6])) {
       setState(() {
         this.message = "${this.gameState[0]} wins";
+        automaticRester();
       });
     } else if ((gameState[1] != "empty") &&
         (gameState[1] == gameState[4]) &&
         (gameState[4] == gameState[7])) {
       setState(() {
         this.message = "${this.gameState[1]} wins";
+        automaticRester();
       });
     } else if ((gameState[2] != "empty") &&
         (gameState[2] == gameState[5]) &&
         (gameState[5] == gameState[8])) {
       setState(() {
         this.message = "${this.gameState[2]} wins";
+        automaticRester();
       });
     } else if ((gameState[0] != "empty") &&
         (gameState[0] == gameState[4]) &&
         (gameState[4] == gameState[8])) {
       setState(() {
         this.message = "${this.gameState[0]} wins";
+        automaticRester();
       });
     } else if ((gameState[2] != "empty") &&
         (gameState[2] == gameState[4]) &&
         (gameState[4] == gameState[6])) {
       setState(() {
         this.message = "${this.gameState[2]} wins";
+        automaticRester();
       });
     } else if (!gameState.contains("empty")) {
       setState(() {
         this.message = "Game Draw";
+        automaticRester();
       });
     }
   }
