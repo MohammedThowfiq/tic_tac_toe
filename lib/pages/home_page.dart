@@ -53,8 +53,8 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
-  getImage(String name) {
-    switch (name) {
+  getImage(String value) {
+    switch (value) {
       case ('empty'):
         return edit;
         break;
@@ -68,8 +68,8 @@ class _HomePageState extends State<HomePage> {
   }
 
   playGame(int index) {
-    setState(() {
-      if (this.gameState[index] == "empty") {
+    if (this.gameState[index] == "empty") {
+      setState(() {
         if (this.isCross) {
           this.gameState[index] = "cross";
           this.isCross = false;
@@ -79,54 +79,54 @@ class _HomePageState extends State<HomePage> {
         }
         //this.isCross = !this.isCross;
         this.checkWin();
-      }
-    });
+      });
+    }
   }
 
   checkWin() {
-    if ((gameState[0] != "edit") &&
+    if ((gameState[0] != "empty") &&
         (gameState[0] == gameState[1]) &&
         (gameState[1] == gameState[2])) {
       setState(() {
         this.message = "${this.gameState[0]} wins";
       });
-    } else if ((gameState[3] != "edit") &&
+    } else if ((gameState[3] != "empty") &&
         (gameState[3] == gameState[4]) &&
         (gameState[4] == gameState[5])) {
       setState(() {
         this.message = "${this.gameState[3]} wins";
       });
-    } else if ((gameState[6] != "edit") &&
+    } else if ((gameState[6] != "empty") &&
         (gameState[6] == gameState[7]) &&
         (gameState[7] == gameState[8])) {
       setState(() {
         this.message = "${this.gameState[6]} wins";
       });
-    } else if ((gameState[0] != "edit") &&
+    } else if ((gameState[0] != "empty") &&
         (gameState[0] == gameState[3]) &&
         (gameState[3] == gameState[6])) {
       setState(() {
         this.message = "${this.gameState[0]} wins";
       });
-    } else if ((gameState[1] != "edit") &&
+    } else if ((gameState[1] != "empty") &&
         (gameState[1] == gameState[4]) &&
         (gameState[4] == gameState[7])) {
       setState(() {
         this.message = "${this.gameState[1]} wins";
       });
-    } else if ((gameState[2] != "edit") &&
+    } else if ((gameState[2] != "empty") &&
         (gameState[2] == gameState[5]) &&
         (gameState[5] == gameState[8])) {
       setState(() {
         this.message = "${this.gameState[2]} wins";
       });
-    } else if ((gameState[0] != "edit") &&
+    } else if ((gameState[0] != "empty") &&
         (gameState[0] == gameState[4]) &&
         (gameState[4] == gameState[8])) {
       setState(() {
         this.message = "${this.gameState[0]} wins";
       });
-    } else if ((gameState[2] != "edit") &&
+    } else if ((gameState[2] != "empty") &&
         (gameState[2] == gameState[4]) &&
         (gameState[4] == gameState[6])) {
       setState(() {
